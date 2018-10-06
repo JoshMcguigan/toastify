@@ -1,6 +1,13 @@
 language: rust
 
+rust:
+  - stable
+  - nightly
+
 matrix:
+    allow_failures:
+        - rust: nightly
+    fast_finish: true
     include:
         - os: osx
 
@@ -11,5 +18,6 @@ matrix:
 
 script:
   - cargo build --verbose
+  - cargo run --verbose
 
-
+cache: cargo
