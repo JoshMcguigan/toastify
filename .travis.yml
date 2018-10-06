@@ -5,5 +5,14 @@ language: rust
 rust:
   - stable
   - nightly
+
+matrix:
+    include:
+        - os: osx
+        - os: linux
+
+
 script:
   - cargo build --verbose
+
+
