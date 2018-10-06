@@ -5,10 +5,20 @@ matrix:
         - os: osx
           rust:
             - stable
+
+        - os: osx
+          rust:
             - nightly
+
         - os: linux
           rust:
             - stable
+          before_install:
+            - sudo apt-get update -qq
+            - sudo apt-get install -y libdbus-1-dev
+
+        - os: linux
+          rust:
             - nightly
           before_install:
             - sudo apt-get update -qq
